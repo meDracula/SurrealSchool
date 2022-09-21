@@ -1,7 +1,6 @@
 from person import Person
 from schedular import Schedular
 import sys
-#from administrator import Administrator
 
 
 class Student(Person, Schedular):
@@ -16,15 +15,3 @@ class Student(Person, Schedular):
 
     def remove_courses(self, *args):
         self.courses -= self.courses.intersection(set(args))
-
-    def get_admin(self):
-        #return Administrator()
-        pass
-
-if __name__ == '__main__':
-    student = Student()
-    student.add_courses('math', 'physics', 'bio')
-    print(student.courses)
-    student.remove_courses('bio')
-    print(student.courses)
-    print(student.__dict__)
